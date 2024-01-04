@@ -1,4 +1,3 @@
-// import { Component } from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list.component";
@@ -12,13 +11,13 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredMonster, setFilteredMonster] = useState(monsters);
 
+  // ********* Hooks - useEffect *********
   const users = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/users");
     const data = await res.json();
     setMonsters(data);
   };
 
-  // ********* Hooks - useEffect *********
   // ? useEffect - fetch data from API and set monsters
   useEffect(() => {
     users();
@@ -57,6 +56,8 @@ const App = () => {
 export default App;
 
 // ? Class - App component
+// import { Component } from "react";
+
 // class App extends Component {
 //   constructor(props) {
 //     super(props);
